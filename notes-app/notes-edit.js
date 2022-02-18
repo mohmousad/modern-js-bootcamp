@@ -19,6 +19,8 @@ const titleElement = document.querySelector("#note-title");
 titleElement.value = note.title;
 titleElement.addEventListener("input", function (e) {
   note.title = e.target.value;
+  note.updatedAt = moment().valueOf();
+  dateElement.textContent = generateLastEdited(note.updatedAt);
   saveNotes(notes);
 });
 
@@ -27,6 +29,9 @@ const bodyElement = document.querySelector("#note-body");
 bodyElement.value = note.body;
 bodyElement.addEventListener("input", function (e) {
   note.body = e.target.value;
+  note.updatedAt = moment().valueOf();
+  dateElement.textContent = generateLastEdited(note.updatedAt);
+
   saveNotes(notes);
 });
 
@@ -50,5 +55,10 @@ window.addEventListener("storage", function (e) {
     }
     titleElement.value = note.title;
     bodyElement.value = note.body;
+    dateElement.textContent = generateLastEdited(note.updatedAt);
   }
 });
+
+// Last edited element
+const dateElement = document.querySelector("#last-edited");
+dateElement.textContent = generateLastEdited(note.updatedAt);

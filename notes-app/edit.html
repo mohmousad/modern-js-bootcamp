@@ -7,10 +7,16 @@
   </head>
   <body>
     <input id="note-title" placeholder="Note Title" />
+    <br />
+    <span id="last-edited"></span>
+    <br />
     <textarea id="note-body" placeholder="Enter note text"></textarea>
+    <br />
     <button id="remove-note">Remove Note</button>
+    <br />
     <a href="/notes-app/index.html">back to home</a>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
     <script src="notes-functions.js"></script>
     <script src="notes-edit.js"></script>
   </body>
