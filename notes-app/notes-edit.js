@@ -2,10 +2,10 @@
 const noteId = location.hash.substring(1);
 
 // Read the notes saved in the local sotrage
-const notes = getSavedNotes();
+let notes = getSavedNotes();
 
 // Find the note that match the id in the url
-const note = notes.find(function (note) {
+let note = notes.find(function (note) {
   return note.id === noteId;
 });
 
@@ -36,4 +36,19 @@ removeElement.addEventListener("click", function () {
   removeNote(noteId);
   saveNotes(notes);
   location.assign("/notes-app/index.html");
+});
+
+// Syncing tabs
+window.addEventListener("storage", function (e) {
+  if (e.key === "notes") {
+    notes = JSON.parse(e.newValue);
+    let note = notes.find(function (note) {
+      return note.id === noteId;
+    });
+    if (note === undefined) {
+      location.assign("/notes-app/index.html");
+    }
+    titleElement.value = note.title;
+    bodyElement.value = note.body;
+  }
 });
