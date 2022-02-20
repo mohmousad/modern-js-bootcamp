@@ -8,7 +8,8 @@ let notes = getSavedNotes();
 let note = notes.find((note) => note.id === noteId);
 
 // Check if the id in url isn't valid
-if (note === undefined) {
+if (!note) {
+  // Falsy Value
   location.assign("/notes-app/index.html");
 }
 
@@ -47,7 +48,8 @@ window.addEventListener("storage", (e) => {
     notes = JSON.parse(e.newValue);
     let note = notes.find((note) => note.id === noteId);
 
-    if (note === undefined) {
+    if (!note) {
+      // Falsy Value
       location.assign("/notes-app/index.html");
     }
     titleElement.value = note.title;
