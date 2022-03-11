@@ -2,8 +2,8 @@
 
 The course includes three main projects:
 
-| Project Name      | Demo            | Start          | Finish          |
-| ----------------- | --------------- | -------------- | --------------- |
-| Note-taking App   | _still working_ | 15 Feb 2022    | _still working_ |
-| To-do App         | _still working_ | 15 Feb 2022    | _still working_ |
-| Hangman word game | _didn't start_  | _didn't start_ | _didn't start_  |
+| Project Name      | Demo            | Start       | Finish          |
+| ----------------- | --------------- | ----------- | --------------- |
+| Note-taking App   | _still working_ | 15 Feb 2022 | _still working_ |
+| To-do App         | _still working_ | 15 Feb 2022 | _still working_ |
+| Hangman word game | _still working_ | 3 Mar 2022  | _still working_ |
